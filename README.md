@@ -39,7 +39,7 @@ There are 5 options for user retailed to 5 main functions:
 	`save_and_exit()` | Saving function and exit |
 		  - Final saving and exit
 
-Six extra functions help code to run:
+Six additional functions help execute code:
 
 def read_from_file() | Universal CSV reading function, helps extract data from .csv |
 
@@ -55,13 +55,19 @@ def is_valid_date() | Validates date format |
 
 
 global veriaebles:
+
 category_list = ['Food', 'Closing', 'Car', 'Misc']  
+
 		- list of restrictions by expenses categories
 csv_budget_file = 'budget_editable_2.csv' 
+
 		- budget amounts and total monthly expenses analisys
 csv_expenses_file = 'all_expenses_01.csv'
+
 		- data of all expenses
 all_expenses = []
+
 		- the list helps manage expenses 
 budget_list = []
+
 		- the list helps manage budget 
