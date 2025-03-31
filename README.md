@@ -1,8 +1,9 @@
 
-Personal Expense Tracker
-Writeup and overview
+# Personal Expense Tracker
+## Writeup and overview
 
-	A Python-based command-line application for personal finance management that helps users:
+## A Python-based command-line application for personal finance management that helps users:
+ 
 - Track expenses across categories
 - Real-time budget vs expense comparisons
 - Set and monitor monthly budgets
@@ -13,29 +14,29 @@ An interactive menu:  main() and print_menu()
 (Keep the program running until the user exits)
 There are 5 options for user retailed to 5 main functions:
 
-1. Add new expenses
+### 1. Add new expenses
 	 `add_expenses()` | Handles expense entry with validation |
 		-  Add expenses
 		- Data entry verification
 		- Date validation (YYYY-MM-DD format)
 		- Category restriction (Food/Closing/Car/Misc)
-2. See my expenses
+### 2. See my expenses
 	`view_expenses()` | Displays sorted by date expense records |
 		- Sort the list of expenses by date YYYY-MM-DD
 		- Present the data to the user in a tabular format
-3. Track the budget
+### 3. Track the budget
 	`track_budget()` | Manages budget creation/analysis |
 		- Set monthly budgets
 		- Matches expense dates to budget periods
 		- Automatically calculates monthly totals
 		- Visual alerts for budget overruns
 		- Historical budget analysis
-4. Save expenses to the file
+### 4. Save expenses to the file
 	`save_to_file()` | Universal CSV saving function |
   		 - `all_expenses_01.csv` (expense records)
    		 - `budget_editable_2.csv` (budget plans)
 		 - Automatic saving of data
-5. Save the expenses and exit
+### 5. Save the expenses and exit
 	`save_and_exit()` | Saving function and exit |
 		  - Final saving and exit
 
