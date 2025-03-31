@@ -1,9 +1,10 @@
 
-Course-End Project: Task Manager with User Authentication
-Writeup and overview
+### Course-End Project: Task Manager with User Authentication
+## Writeup and overview
 
-	A Python-based CLI (command-line interface) task manager:
-Problem Statement:
+### A Python-based CLI (command-line interface) task manager:
+
+### Problem Statement:
 In today’s world, individuals often need to keep track of various tasks in a structured
 way. You are tasked with building a Task Manager that allows users to manage their
 tasks. The system should include user authentication, meaning each user has to log
