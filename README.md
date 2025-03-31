@@ -1,73 +1,98 @@
 
-Personal Expense Tracker
+Course-End Project: Task Manager with User Authentication
 Writeup and overview
 
-	A Python-based command-line application for personal finance management that helps users:
-- Track expenses across categories
-- Real-time budget vs expense comparisons
-- Set and monitor monthly budgets
-- Analyze spending patterns
-- Maintain financial records in .CSV files
+	A Python-based CLI (command-line interface) task manager:
+Problem Statement:
+In today’s world, individuals often need to keep track of various tasks in a structured
+way. You are tasked with building a Task Manager that allows users to manage their
+tasks. The system should include user authentication, meaning each user has to log
+in with a username and password. Once logged in, users can create, view, update,
+and delete their tasks. Each user’s tasks should be stored separately, and only the
+authenticated user can access their tasks.
+Objectives:
+1. Design and implement a user authentication system (login and registration)
+2. Create a task management system that allows users to:
+a. Add, view, mark as completed, and delete tasks
+3. Use file handling to store user credentials and tasks persistently
+4. Create an interactive menu-driven interface to manage tasksSteps to Perform:
+1. User Authentication:
+• Registration:
+o Create a function to prompt the user to enter a username and
+password
+o Ensure that the username is unique, and hash the password for
+security before storing it in a file
+•
+Login:
+o Create a function to prompt the user for their username and
+password, validate the credentials by comparing them with the stored
+data, and grant access to the task manager upon successful login
+2. Add a Task:
+•
+Create a function that prompts the user for a task description. Assign a
+unique task ID and set the status to Pending
+•
+Store the task in a file, and confirm that the task was added
+3. View Tasks:
+•Create a function to retrieve and display all tasks for the logged-in user
+•Each task should show the task ID, description, and status (Pending or
+Completed)
+4. Mark a Task as Completed:
+•
+Create a function that allows the user to select a task by its ID and update
+its status to Completed
+5. Delete a Task:
+•
+Create a function that allows the user to select a task by its ID and delete
+it from their task list6. Create an Interactive Menu:
+• Build a menu that allows users to choose between:
+oAdd a Task
+oView Tasks
+oMark a Task as Completed
+oDelete a Task
+oLogout
+For each option, call the corresponding function, and loop back to the menu until
+the user logs out.
 
-An interactive menu:  main() and print_menu()
-(Keep the program running until the user exits)
-There are 5 options for user retailed to 5 main functions:
+##################################################################################
 
-1. Add new expenses
-	 `add_expenses()` | Handles expense entry with validation |
-		-  Add expenses
-		- Data entry verification
-		- Date validation (YYYY-MM-DD format)
-		- Category restriction (Food/Closing/Car/Misc)
-2. See my expenses
-	`view_expenses()` | Displays sorted by date expense records |
-		- Sort the list of expenses by date YYYY-MM-DD
-		- Present the data to the user in a tabular format
-3. Track the budget
-	`track_budget()` | Manages budget creation/analysis |
-		- Set monthly budgets
-		- Matches expense dates to budget periods
-		- Automatically calculates monthly totals
-		- Visual alerts for budget overruns
-		- Historical budget analysis
-4. Save expenses to the file
-	`save_to_file()` | Universal CSV saving function |
-  		 - `all_expenses_01.csv` (expense records)
-   		 - `budget_editable_2.csv` (budget plans)
-		 - Automatic saving of data
-5. Save the expenses and exit
-	`save_and_exit()` | Saving function and exit |
-		  - Final saving and exit
+final code:
 
-Six additional functions help execute code:
+## Secure Password Handling
 
-def read_from_file() | Universal CSV reading function, helps extract data from .csv |
+Uses getpass to hide password input.
 
-def in_category () | Validates if an expense category is included in a set  |
+Properly hashes passwords with PBKDF2 and salts.
 
-def if_empty() | Makes sure that the description of expenses is not empty |
+## Task Management
 
-def print_budget() | Print budget in tabular format |
+Dynamic task numbering per user.
 
-def str_to_float() | Universal function to convert numbers from string format to float |
+Global unique task IDs.
 
-def is_valid_date() | Validates date format |
+Clean file I/O with read_read_file() and write_file().
 
+## Error Handling
 
-global veriaebles:
+Catches malformed lines in files.
 
-category_list = ['Food', 'Closing', 'Car', 'Misc']  
+Validates task numbers during deletion/completion.
 
-		- list of restrictions by expenses categories
-csv_budget_file = 'budget_editable_2.csv' 
+## User Experience
 
-		- budget amounts and total monthly expenses analisys
-csv_expenses_file = 'all_expenses_01.csv'
+Clear menus and prompts.
 
-		- data of all expenses
-all_expenses = []
+Auto-login after registration.
 
-		- the list helps manage expenses 
-budget_list = []
+## Areas for Improvement
+	
+ ### Efficiency:
+* File Writing: Avoid overwriting the entire file for single-task updates (use a database for scalability).
 
-		- the list helps manage budget 
+### User Feedback:
+* Success Messages: Add confirmations for task additions/completions/deletions.
+
+### Security:
+* Password Complexity: Enforce minimum password length/complexity during registration.
+
+### Use a Database: SQLite or TinyDB for efficient querying.
